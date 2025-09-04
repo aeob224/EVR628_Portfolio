@@ -1,2 +1,2 @@
 # EVR628_Portfolio
-Portfolio repository for EVR 628 class
+This is my repository for the EVR 628 class
