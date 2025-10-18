@@ -16,15 +16,18 @@ library(tidyverse)
 library(janitor)
 
 ## Load data -------------------------------------------------------------------
+###Morphometric data from larval sampling
 morphometric_data <- read_csv("data/raw/morphometric_variables.csv", na = c("n/a", "")) |>
   unite(col = "pond_year",
         pond, year)
 
+###Aquatic habitat data
 aquatic_data <- read_csv("data/raw/aquatic_variables.csv") |>
   unite(col = "pond_year",
         pond, year)
 
-# PROCESSING morphometric data into mean body condition by pond and year###################################################################
+
+# Converting morphometric data into mean body condition by pond and year###################################################################
 ## Filter morphometric data entries missing SVL and mass and log transforms them
 filtered_morphometric <- morphometric_data |>
   filter_at(vars(mass, svl), all_vars(!is.na(.))) |>
@@ -42,8 +45,10 @@ summary_body_condition <- filtered_morphometric |>
 
 
 
-## Create dataset with average body condition by year and pond -------------------------------------------------------------------
-##Note: Body condition is calculated as the residuals of log(mass) vs. log(snout to vent length) in amphibians
-body_conditions <-
+#Joining mean body condition with aquatic data ###################################################################
+model_data <- summary_body_condition |>
+  left_join(aquatic_data,
+            by = join_by(pond_year))
 
 
+?right_join
