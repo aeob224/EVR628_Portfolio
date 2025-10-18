@@ -13,26 +13,30 @@
 ## Load packages ---------------------------------------------------------------
 library(EVR628tools)
 library(tidyverse)
+library(janitor)
 
 ## Load data -------------------------------------------------------------------
-body_conditions <- read_csv("data/raw/SCLTS_larval_body_condition.csv")
-aquatic_data <- read_csv("data/raw/aquatic_variables.csv")
+morphometric_data <- read_csv("data/raw/morphometric_variables.csv", na = c("n/a", "")) |>
+  unite(col = "pond_year",
+        pond, year)
+
+aquatic_data <- read_csv("data/raw/aquatic_variables.csv") |>
+  unite(col = "pond_year",
+        pond, year)
 
 # PROCESSING ###################################################################
-
-## Some step -------------------------------------------------------------------
-
-
-# VISUALIZE ####################################################################
-
-## Another step ----------------------------------------------------------------
-
-# ANALYSIS #####################################################################
-
-## Almost last step ------------------------------------------------------------
+## Filter morphometric data entries missing SVL and mass and log transforms them
+filtered_morphometric <- morphometric_data |>
+  filter_at(vars(mass, svl), all_vars(!is.na(.))) |>
+  mutate(svl = log(svl)) |>
+  mutate(mass = log(mass))
 
 
-# EXPORT #######################################################################
 
-## The final step --------------------------------------------------------------
-################################################################################
+## Create dataset with average body condition by year and pond -------------------------------------------------------------------
+##Note: Body condition is calculated as the residuals of log(mass) vs. log(snout to vent length) in amphibians
+body_conditions <-
+
+
+
+?mutate
