@@ -6,9 +6,9 @@ This project deals with the federally endangered Santa Cruz Long-toed salamander
 
 ## Repository Folders:
 
-[data]{.underline}: Contains subfolders for raw, processed, and output datasets.
+data: Contains subfolders for raw, processed, and output datasets.
 
-[scripts/01processing]{.underline}: Contains R scripts used to process raw data into tidy format.
+scripts/01processing: Contains R scripts used to process raw data into tidy format.
 
 ## Tidy Dataset Column Metadata:
 
