@@ -16,7 +16,7 @@ library(readr)
 
 # Load data ################################################################################
 ##Morphometric data from larval sampling
-morphometric_data <- read_csv("data/raw/morphometric_variables.csv", na = c("n/a", "")) |>
+morphometric_data <- read_csv("data/raw/morphometric_variables.csv", na = c("n/a", "", "MISSING")) |>
   unite(col = "pond_year",
         pond, year)
 
