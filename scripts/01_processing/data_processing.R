@@ -21,7 +21,7 @@ morphometric_data <- read_csv("data/raw/morphometric_variables.csv", na = c("n/a
         pond, year)
 
 ##Aquatic habitat data
-aquatic_data <- read_csv("data/raw/aquatic_variables.csv") |>
+aquatic_data <- read_csv("data/raw/aquatic_variables.csv",na = c("n/a", "", "MISSING")) |>
   unite(col = "pond_year",
         pond, year)
 
@@ -43,11 +43,15 @@ summary_body_condition <- filtered_morphometric |>
   summarize(body_condition = mean(body_condition))
 
 
-
 #Joining mean body condition with aquatic data ###################################################################
 model_data <- summary_body_condition |>
-  left_join(aquatic_data,
+  left_join(filtered_aquatic,
             by = join_by(pond_year))
+
+
+#Filter NA out of plankton data
+model_data <- model_data |>
+  filter_at(vars(plankton), all_vars(!is.na(.)))
 
 #Write tidy data file ################################################################################
 write_csv(model_data, "data/processed/tidy_data.csv")
