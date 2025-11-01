@@ -55,3 +55,4 @@ model_data <- model_data |>
 
 #Write tidy data file ################################################################################
 write_csv(model_data, "data/processed/tidy_data.csv")
+write_rds(model_data, "data/processed/tidy_data.rds")
