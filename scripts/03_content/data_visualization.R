@@ -11,6 +11,7 @@
 #Load Packages #################################################################
 library(tidyverse)
 library(EVR628tools)
+library(cowplot)
 
 # Load Data ####################################################################
 data <- read_csv("data/processed/tidy_data.csv")
@@ -18,7 +19,7 @@ data <- read_csv("data/processed/tidy_data.csv")
 
 #Plot Density against body condition ###########################################
 ##Note: Both measures are unitless as presented.
-ggplot(data = data,
+density_plot <- ggplot(data = data,
        mapping = aes(x = log(larv_density),
                      y = body_condition))+
   geom_smooth(method = "gam",
@@ -27,40 +28,60 @@ ggplot(data = data,
   labs(title = "Generalized Additive Model of Body Condition vs. Density",
        subtitle = "Relating Santa Cruz Long-toed salamander larval abundance to health",
        x = "log(Larval Density)",
-       y = "Mean Body Condition")
+       y = "Mean Body Condition")+
+  theme_bw()
 
+ggsave("density_plot.png",
+       density_plot,
+       width = 162.56,
+       height = 91.44,
+       units = "mm")
 
-#Plot Body condition against multiple stressors and create a multi-plot
-##Salinity plot
-ggplot(data = data,
-       mapping = aes(x = log(salinity +0.1),
+#Plot Body condition against prey density parameters ###########################
+##Body Condition against plankton abundance
+plankton <- ggplot(data = data,
+       mapping = aes(x = log(plankton+1),
                      y = body_condition))+
   geom_smooth(method = "lm",
               color = "black")+
   geom_point(color = "steelblue")+
-  labs(x = "log(Salinity)",
-       y = "Mean Body Condition")
-
-
-
-#Body Condition against plankton abundance
-ggplot(data = data,
-       mapping = aes(x = log(plankton +1),
-                     y = body_condition))+
-  geom_smooth(method = "lm",
-              color = "black")+
-  geom_point(color = "steelblue")+
-  labs(x = "log(# of Plankton)",
-       y = "Mean Body Condition")
+  labs(x = "log(Plankton Density)",
+       y = "Mean Body Condition",
+       title = "Body Condition vs. Plankton")+
+  theme_bw()
 
 #Body Condition against medium prey abundance
-ggplot(data = data,
-       mapping = aes(x = log(med_prey +1),
+medium_prey <- ggplot(data = data,
+       mapping = aes(x = log(med_prey + 1),
                      y = body_condition))+
   geom_smooth(method = "lm",
               color = "black")+
   geom_point(color = "steelblue")+
-  labs(x = "log(Medium Prey Abundance)",
-       y = "Mean Body Condition")
+  labs(x = "log(Medium Prey Density)",
+       y = "Mean Body Condition",
+       title = "Body Condition vs. Medium Prey")+
+  theme_bw()
 
-#
+#Body condition against large prey abundance
+large_prey <- ggplot(data = data,
+       mapping = aes(x = log(large_prey),
+                     y = body_condition))+
+  geom_smooth(method = "lm",
+              color = "black")+
+  geom_point(color = "steelblue")+
+  labs(x = "log(Large Prey Density)",
+       y = "Mean Body Condition",
+       title = "Body Condition vs. Large Prey")+
+  theme_bw()
+
+
+prey_relationships <- plot_grid(plankton,
+                                medium_prey,
+                                large_prey,
+                                ncol = 3)
+
+ggsave(plot = prey_relationships,
+       filename = "prey_relationships.png",
+       width = 300,
+       height = 91.44,
+       units = "mm")
