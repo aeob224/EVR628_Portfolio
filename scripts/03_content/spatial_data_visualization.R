@@ -5,7 +5,11 @@
 # Aidan O'Brien
 # aeo83@miami.edu
 #
-# Description
+# This script creates a visualization of all the ponds sampled in Santa Cruz and
+# Monterey counties, CA, USA, between 2021 and 2024. Some ponds were sampled
+# multiple times, but the point of this map is to show the full extent and sum
+# of ponds sampled in that time and whether or not endangered Santa Cruz long-toed
+# salamander larvae were detected at least once during the survey period.
 #
 
 # Load packages ################################################################
@@ -41,7 +45,7 @@ counties_crop <- read_sf(dsn = "data/raw/California_Counties_-310302818977097603
           ymax = 37.000)
 
 
-?recode
+
 # Plot Data ####################################################################
 ##Create inset to provide better geographic context
 inset <- ggplot() +
@@ -77,7 +81,11 @@ SCLTS_ponds <- ggplot()+
   annotation_scale(location = "bl")
 
 
-ggdraw() +
+final_map <- ggdraw() +
   draw_plot(SCLTS_ponds) +
   draw_plot(inset, x = 0.505, y = 0.605, width = 0.3, height = 0.3)
+
+
+ggsave(plot = final_map,
+       filename = "results/img/pond_survey_map.png")
 
