@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Aidan O’Brien">
+
+<title>Too many larvae or not enough food?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="final_report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="final_report_files/libs/quarto-html/quarto.js"></script>
+<script src="final_report_files/libs/quarto-html/popper.min.js"></script>
+<script src="final_report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="final_report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="final_report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="final_report_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="final_report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="final_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="final_report_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Too many larvae or not enough food?</h1>
+<p class="subtitle lead">The effects of density and prey availability on body condition in Santa Cruz Long-toed Salamanders</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Aidan O’Brien </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The Santa Cruz Long-toed salamander (<em>Ambystoma macrodactylum croceum</em>; hereafter SCLTS) is a federally endangered pond-breeding amphibian endemic to Santa Cruz and Monterey Counties in California, USA. These salamanders have a biphasic life-cycle. The first few months of their lives are spent as fully aquatic larvae, and they metamorphose into terrestrial juveniles and leave their ponds during the summer months. After their discovery in 1956, SCLTS were quickly recognized as unique, given that the subspecies is located over 200 kilometers from the rest of the long-toed salamander range in the Pacific Northwest (Russel and Anderson, 1956). Because the entire range is just a portion of two counties, and agriculture and urbanization have modified and fragmented the landscape within their limited extent, SCLTS are vulnerable to extinction. Despite their listing in the inaugural group of protected organisms under the Endangered Species Preservation Act in 1967, there is a dearth of literature on their ecology, leaving wide gaps in knowledge that need to be filled to understand the stressors that are contributing most to their decline and to make informed decisions on management strategies. Additionally, work on non-endangered subspecies of long-toed salamanders may not provide sufficient information for SCLTS conservation, as SCLTS have a distinct life history, unique microhabitat preferences, and different dietary habits than the other subspecies (Anderson 1967; Anderson 1968).</p>
+<p>Recent work by the Conservation Ecology Lab at the University of Miami has shed light on the terrestrial needs of juvenile SCLTS and how the aquatic habitat shapes annual recruitment (Stemle et al., 2025a; Stemle et al., 2025b; O’Brien et al., in prep). O’Brien et al.&nbsp;(in prep) used densities of late stage aquatic larvae as a metric of recruitment. While this approach appears to be valid for measuring new juveniles entering the terrestrial population, it overlooks an important component of recruitment: survival to adulthood. It is important that we create habitat for endangered species that produces large numbers of recruits, but it is also important that those recruits be healthy, as large numbers of unhealthy recruits may not actually represent greater addition of adults to a population. In this study, I attempt to reconcile this gap by examining how aquatic habitat conditions such as density and prey abundance influence the body conditions of larval SCLTS.</p>
+<p>We also collected morphometric data on a subsample of larvae collected at each pond, which may allow us to examine the effect of the aquatic environment on not just recruitment but the health of recruits. It is possible that ponds are producing large numbers of recruits but that many of those recruits are in poor health and are less likely to survive to adulthood.</p>
+</section>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
+<p>In this project, I aim to address two questions:</p>
+<p>1) Do higher densities of SCLTS larvae result in lower larval body condition?</p>
+<p>2) How does prey abundance influence larval body condition?</p>
+<p>I hypothesize that higher densities of larvae and lower densities of prey will result in increased stress and intraspecific competition, which will create worse larval body conditions.</p>
+</section>
+<section id="data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="data-sources">Data Sources</h2>
+<section id="study-area" class="level4">
+<h4 class="anchored" data-anchor-id="study-area">Study Area</h4>
+<p>SCLTS breed in ~40 ponds across Santa Cruz and Monterey Counties, CA, USA. SCLTS breeding ponds have a wide variety of hydrologies ranging from permanent water bodies fed by groundwater to rain-filled ephemeral pools. These ponds are a mix of artificial and natural sites, though many of the natural ponds have also been modified by humans (U.S. Fish and Wildlife Service, 2019). The region’s Mediterranean climate, characterized by dry summers and wet winters, affects the number of ponds available to SCLTS each year, as interannual rainfall variation can influence the availability of rain-filled ephemeral ponds. The terrestrial landscape is highly developed, and all known breeding ponds are located near high traffic volume roads, agricultural land, or both (Stemle et al., 2025a).</p>
+</section>
+<section id="data-collection" class="level4">
+<h4 class="anchored" data-anchor-id="data-collection">Data Collection</h4>
+<p>Between 2021 and 2024, we accessed 51 ponds (Figure 1) spanning the extent of the known SCLTS range and conducted 144 total surveys (one to four per pond) to characterize the aquatic habitat best suited for SCLTS recruitment. We conducted our surveys in late May of each year. SCLTS breeding occurs during winter rain events, so our surveys were timed to capture larvae after they have gone through a substantial amount of post-hatching mortality but before any of them have metamorphosed, allowing for a more accurate estimate of recruitment.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="final_report_files/figure-html/figure-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Figure 1. Map of the study area. This shows every pond surveyed between 2021 and 2024 and highlights ponds where SCLTS breeding was detected.</p>
+<p>We measured the biotic community and SCLTS density in each pond. Plankton are an important component of the SCLTS larval diet (Anderson, 1968). We conducted four 2-m plankton tows (17 cm diameter; 153-μm mesh) at each site and stored the samples in ethanol. We subsampled the plankton by homogenizing each sample and haphazardly selected one third of the volume. We then examined the sub-sample under a Zeiss Stemi 508 dissecting microscope, counted and classified the plankton into the two major groups (Copepoda and Cladocera) found at the sites, and counted the number of chironomids, ghost midges, and amphipods. To sample macroinvertebrate and vertebrate communities, we conducted two types of density surveys. At ponds where the vegetative structure allowed for seining, we conducted four 5-m seine hauls (0.3 cm mesh) with a and then categorized and counted all macroscopic organisms found. Some of the surveyed ponds were difficult to seine effectively, so at these we conducted 50 1-m dipnet sweeps dispersed evenly throughout the pond and identified and counted all macroscopic organisms found in these sweeps. We classified prey into three categories. Plankton included all copepods and cladocera found in plankton tows. Medium prey included chironomids, ghost midges, and amphipods found in plankton tows. Large prey included chorus frog tadpoles, planorbid snails, physid snails, water boatmen, and backswimmers found in density dipnet surveys.</p>
+<p>Once these density surveys measuring the entire biotic community were complete, we conducted a minimum of 40 m<sup>2</sup> of additional dipnet sweeps and seine surveys (referred to as larval dipnets or larval seines) to specifically search for SCLTS larvae, unless 25 larvae were captured before reaching that number. We kept a count of the number and length of all seine hauls and the number of 1-m dipnet sweeps in order to accurately measure the density of larvae in each pond. We measured the snout-to-vent length (SVL), total length, and mass of all captured SCLTS larvae and noted if there were any signs of metamorphosis. We calculated SCLTS larval density at each pond by first calculating the SCLTS larval density obtained through each survey method (density dipnet, density seine, larval dipnet, or larval seine). We then divided the total number of salamander larvae captured by the total pond area sampled to estimate the larval SCLTS density at each pond.</p>
+</section>
+</section>
+<section id="data-processing" class="level2">
+<h2 class="anchored" data-anchor-id="data-processing">Data Processing</h2>
+<p>To evaluate the effect of density and prey abundance on larval SCLTS body condition, I filtered the survey dataset to include only ponds with SCLTS detections, as those are the only surveys with body condition data. This sample included 64 surveys from the initial 144. I then joined the morphometric data with the filtered density and prey abundance data.</p>
+<p>I calculated body condition by constructing a linear model relating larvae SVL to mass. The residuals of this model served as a metric of overall condition, with more positive values representing greater body condition. I calculated the mean body condition for each pond survey and then constructed linear models relating plankton abundance, medium prey abundance, and large prey abundance to larval body condition by pond. I also created a generalized additive model relating larval density to body condition, due to the appearance of a non-linear relationship between these two variables.</p>
+</section>
+<section id="main-findings" class="level2">
+<h2 class="anchored" data-anchor-id="main-findings">Main Findings</h2>
+<p>We detected no significant effect of larval density on SCLTS body condition (Figure 2). This result suggests that my earlier work treating larval density as a proxy of recruitment is probably not confounded by the body condition of larvae, since higher density ponds actually mostly seem to have comparable or slightly better body conditions than low density ponds.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="final_report_files/figure-html/figure-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Figure 2. Generalized additive model relating log-larval SCLTS density to mean larval body condition. There is a gradual but ultimately insignificant increase in body condition as larval density increases.</p>
+<p>Medium prey and large prey also showed no significant effect on SCLTS larval body condition (Figure 3). Plankton abundance had a marginally significant positive effect on body condition (p = 0.05; Figure 3).</p>
+<p><img src="results/img/prey_relationships.png" class="img-fluid"></p>
+<p>Figure 3. Linear relationships between three categories of prey and larval SCLTS body condition. Higher abundances of plankton are marginally significantly related to higher SCLTS body condition. Medium prey and large prey abundance are not significantly associated with SCLTS body condition.</p>
+<p>Overall, these results suggest that there is much work to be done in understanding what influences SCLTS larval body condition, but this work provides evidence that may inform next steps. The marginally significant plankton result suggests that some prey may be limiting for larval health, but more data collected as part of a long-term study or a laboratory experiment will be needed to further characterize this relationship. Additionally, my finding that larval density is not related to body condition is important, since researchers frequently assume density-dependence in populations of amphibian larvae.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Anderson, J.D., 1967. A Comparison of the Life Histories of Coastal and Montane Populations of <em>Ambystoma macrodactylum</em> in California. The American Midland Naturalist 77, 323–355.<a href="https://doi.org/10.2307/2423346"></a></p>
+<p>Anderson, J.D., 1968. A Comparison of the Food Habits of <em>Ambystoma macrodactylum sigillatum</em>, <em>Ambystoma macrodactylum croceum</em>, and <em>Ambystoma tigrinum californiense</em>. Herpetologica 24, 273–284.</p>
+<p>Russell, R.W., Anderson, J.D., 1956. A Disjunct Population of the Long-Nosed Salamander from the Coast of California. Herpetologica 12, 137–140.</p>
+<p>Stemle, L.R., Laabs, D., Searcy, C.A., 2025a. Land use change, fragmentation, and sea level rise create escalating viability concerns for an imperiled salamander. Ecosphere 16, e70284.</p>
+<p>Stemle, L.R., A.F. Messerman, A.E. O’Brien, and C. A. Searcy. 2025b. Blazing a trail: analyzing imperiled salamander movement, emergence patterns, and habitat preferences in terrestrial uplands. Herpetologica.&nbsp;</p>
+<p>U.S. Fish and Wildlife Service. 2019. Santa Cruz long-toed salamander (Ambystoma macrodactylum croceum) 5 Year Review: Summary and Evaluation. U.S. Fish and Wildlife Service, Ventura Fish and Wildlife Office, Ventura, California.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
