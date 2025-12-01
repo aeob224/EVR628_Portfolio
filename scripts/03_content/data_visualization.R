@@ -37,7 +37,8 @@ density_plot <- ggplot(data = data,
        subtitle = "Relating Santa Cruz Long-toed salamander larval abundance to health",
        x = "log(Larval Density)",
        y = "Mean Body Condition")+
-  theme_bw()
+  theme_classic()
+density_plot
 
 ##Save density plot
 ggsave("density_plot.png",
@@ -59,7 +60,8 @@ plankton <- ggplot(data = data,
   labs(x = "log(Plankton Density)",
        y = "Mean Body Condition",
        title = "Body Condition vs. Plankton")+
-  theme_bw()
+  theme_classic()
+plankton
 
 #Body Condition against medium prey abundance
 medium_prey <- ggplot(data = data,
@@ -71,7 +73,8 @@ medium_prey <- ggplot(data = data,
   labs(x = "log(Medium Prey Density)",
        y = "Mean Body Condition",
        title = "Body Condition vs. Medium Prey")+
-  theme_bw()
+  theme_classic()
+medium_prey
 
 #Body condition against large prey abundance
 large_prey <- ggplot(data = data,
@@ -83,8 +86,8 @@ large_prey <- ggplot(data = data,
   labs(x = "log(Large Prey Density)",
        y = "Mean Body Condition",
        title = "Body Condition vs. Large Prey")+
-  theme_bw()
-
+  theme_classic()
+large_prey
 
 ##Create multi-plot object
 prey_relationships <- plot_grid(plankton,
