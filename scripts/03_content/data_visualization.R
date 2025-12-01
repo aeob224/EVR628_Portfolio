@@ -40,6 +40,9 @@ density_plot <- ggplot(data = data,
   theme_classic()
 density_plot
 
+library(mgcv)
+density_model <- gam(body_condition ~ s(log(larv_density)), data = data)
+summary(density_model)
 ##Save density plot
 ggsave("density_plot.png",
        density_plot,
@@ -57,14 +60,15 @@ plankton <- ggplot(data = data,
   geom_smooth(method = "lm",
               color = "black")+
   geom_point(color = "steelblue")+
-  labs(x = "log(Plankton Density)",
+  labs(x = "log-Plankton Density",
        y = "Mean Body Condition",
        title = "Body Condition vs. Plankton")+
   theme_classic()
 plankton
 
-##Actual Model
+##Actual Plankton Model
 plankton_model <- lm(body_condition ~ log(plankton+1), data = data)
+summary(plankton_model)
 
 #Body Condition against medium prey abundance
 medium_prey <- ggplot(data = data,
@@ -73,11 +77,16 @@ medium_prey <- ggplot(data = data,
   geom_smooth(method = "lm",
               color = "black")+
   geom_point(color = "steelblue")+
-  labs(x = "log(Medium Prey Density)",
+  labs(x = "log-Medium Prey Density",
        y = "Mean Body Condition",
        title = "Body Condition vs. Medium Prey")+
   theme_classic()
 medium_prey
+
+##Actual Medium Prey Model
+med_prey_model <- lm(body_condition ~ log(med_prey+1), data = data)
+summary(med_prey_model)
+
 
 #Body condition against large prey abundance
 large_prey <- ggplot(data = data,
@@ -86,18 +95,23 @@ large_prey <- ggplot(data = data,
   geom_smooth(method = "lm",
               color = "black")+
   geom_point(color = "steelblue")+
-  labs(x = "log(Large Prey Density)",
+  labs(x = "log-Large Prey Density",
        y = "Mean Body Condition",
        title = "Body Condition vs. Large Prey")+
   theme_classic()
 large_prey
+
+##Actual large Prey Model
+large_prey_model <- lm(body_condition ~ log(large_prey), data = data)
+summary(large_prey_model)
+
 
 ##Create multi-plot object
 prey_relationships <- plot_grid(plankton,
                                 medium_prey,
                                 large_prey,
                                 ncol = 3)
-
+prey_relationships
 ##Save multi-plot
 ggsave(plot = prey_relationships,
        filename = "prey_relationships.png",
