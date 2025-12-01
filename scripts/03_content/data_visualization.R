@@ -63,6 +63,9 @@ plankton <- ggplot(data = data,
   theme_classic()
 plankton
 
+##Actual Model
+plankton_model <- lm(body_condition ~ log(plankton+1), data = data)
+
 #Body Condition against medium prey abundance
 medium_prey <- ggplot(data = data,
        mapping = aes(x = log(med_prey + 1),
