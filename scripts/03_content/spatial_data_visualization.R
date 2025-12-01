@@ -85,7 +85,7 @@ final_map <- ggdraw() +
   draw_plot(SCLTS_ponds) +
   draw_plot(inset, x = 0.505, y = 0.605, width = 0.3, height = 0.3)
 
-
+final_map
 ggsave(plot = final_map,
        filename = "results/img/pond_survey_map.png")
 
