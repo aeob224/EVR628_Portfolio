@@ -4,7 +4,7 @@ This is Aidan O'Brien's repository for EVR 628.
 
 This project deals with the federally endangered Santa Cruz Long-toed salamander (SCLTS). The intent is to assess if there is any relationship between prey abundance or larval salamander density and SCLTS larval body condition.
 
-![Final report of analyses](final_report.html)
+![](final_report.qmd)
 
 ## Repository Folders:
 
